@@ -24,5 +24,7 @@ public class JasperReportsTest {
         JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, new HashMap(), new JREmptyDataSource());
         JasperExportManager.exportReportToPdfFile(jasperPrint, "target/simple_report.pdf");
+        JasperExportManager.exportReportToXmlFile(jasperPrint, "target/simple_report.xml", false);
+        JasperExportManager.exportReportToHtmlFile(jasperPrint, "target/simple_report.html");
     }
 }
