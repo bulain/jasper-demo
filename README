@@ -1,0 +1,5 @@
+This is JasperReports demo project.
+
+If you want to build this project, please follow the next step.
+1, checkout out parent and run: mvn install.
+2, mvn clean package
