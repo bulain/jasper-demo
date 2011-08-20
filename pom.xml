@@ -22,7 +22,6 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <ant.version>1.6.5</ant.version>
         <tools.version>1.5</tools.version>
         <jasper.version>4.0.1</jasper.version>
         <poi.version>3.6</poi.version>
@@ -108,11 +107,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <dependencies>
-                    <dependency>
-                        <groupId>ant</groupId>
-                        <artifactId>ant-nodeps</artifactId>
-                        <version>${ant.version}</version>
-                    </dependency>
                     <dependency>
                         <groupId>com.sun</groupId>
                         <artifactId>tools</artifactId>
