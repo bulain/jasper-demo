@@ -15,16 +15,16 @@ import net.sf.jasperreports.engine.JasperReport;
 import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 
-public class JasperReportsTest {
+public class DemoReportTest {
     @Test
     public void testJasperReports() throws IOException, JRException {
-        ClassPathResource resource = new ClassPathResource("reports/jasperreports_demo.jr.xml");
+        ClassPathResource resource = new ClassPathResource("reports/demoReport.jr.xml");
         InputStream inputStream = resource.getInputStream();
 
         JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, new HashMap(), new JREmptyDataSource());
-        JasperExportManager.exportReportToPdfFile(jasperPrint, "target/simple_report.pdf");
-        JasperExportManager.exportReportToXmlFile(jasperPrint, "target/simple_report.xml", false);
-        JasperExportManager.exportReportToHtmlFile(jasperPrint, "target/simple_report.html");
+        JasperExportManager.exportReportToPdfFile(jasperPrint, "target/demoReport.pdf");
+        JasperExportManager.exportReportToXmlFile(jasperPrint, "target/demoReport.xml", false);
+        JasperExportManager.exportReportToHtmlFile(jasperPrint, "target/demoReport.html");
     }
 }
