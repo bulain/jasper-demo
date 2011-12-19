@@ -23,9 +23,11 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <tools.version>1.5</tools.version>
+        <mysql.version>5.1.17</mysql.version>
         <jasper.version>4.0.1</jasper.version>
         <poi.version>3.6</poi.version>
         <jxl.version>2.6.10</jxl.version>
+        <migration.env>test</migration.env>
     </properties>
 
     <dependencies>
@@ -102,6 +104,29 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.mybatis.maven</groupId>
+                <artifactId>maven-migration-plugin</artifactId>
+                <configuration>
+                    <repository>src/migration</repository>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>migration-up</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>up</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>${mysql.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
