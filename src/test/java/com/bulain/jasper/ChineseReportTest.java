@@ -21,21 +21,21 @@ import org.springframework.core.io.ClassPathResource;
 
 import com.bulain.test.BaseTestCase;
 
-public class JdbcReportTest extends BaseTestCase {
+public class ChineseReportTest extends BaseTestCase {
     @Autowired
     private DataSource dataSource;
 
     @Test
     public void testReport() throws IOException, JRException, SQLException {
-        ClassPathResource resource = new ClassPathResource("reports/jdbcReport.jr.xml");
+        ClassPathResource resource = new ClassPathResource("reports/chineseReport.jr.xml");
         InputStream inputStream = resource.getInputStream();
 
         JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
-        
+
         Connection conn = dataSource.getConnection();
-        JasperPrint jasperPrint = JRFiller.fillReport(jasperReport, new HashMap<String,Object>(), conn);
-        JasperExportManager.exportReportToPdfFile(jasperPrint, "target/jdbcReport.pdf");
-        JasperExportManager.exportReportToXmlFile(jasperPrint, "target/jdbcReport.xml", false);
-        JasperExportManager.exportReportToHtmlFile(jasperPrint, "target/jdbcReport.html");
+        JasperPrint jasperPrint = JRFiller.fillReport(jasperReport, new HashMap<String, Object>(), conn);
+        JasperExportManager.exportReportToPdfFile(jasperPrint, "target/chineseReport.pdf");
+        JasperExportManager.exportReportToXmlFile(jasperPrint, "target/chineseReport.xml", false);
+        JasperExportManager.exportReportToHtmlFile(jasperPrint, "target/chineseReport.html");
     }
 }

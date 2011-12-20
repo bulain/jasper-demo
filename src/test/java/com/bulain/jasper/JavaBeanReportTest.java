@@ -22,21 +22,14 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.fill.JRFiller;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.TestExecutionListeners;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@TestExecutionListeners(value = {DependencyInjectionTestExecutionListener.class})
-@ContextConfiguration(locations = {"classpath*:spring/applicationContext*.xml",
-        "classpath*:spring/propertyConfigurer-test.xml"})
-public class JavaBeanReportTest {
+import com.bulain.test.BaseTestCase;
+
+public class JavaBeanReportTest extends BaseTestCase {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     @Autowired
