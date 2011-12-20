@@ -1,0 +1,5 @@
+<project name="jasper-demo" default="copy" basedir=".">
+	<target name="copy">
+		<native2ascii dest="target/classes" src="src/main/resources" includes="**/*.chinese" ext=".properties" encoding="UTF-8" />
+	</target>
+</project>
