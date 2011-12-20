@@ -22,11 +22,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <tools.version>1.5</tools.version>
-        <mysql.version>5.1.17</mysql.version>
         <jasper.version>4.0.1</jasper.version>
         <poi.version>3.6</poi.version>
         <jxl.version>2.6.10</jxl.version>
+        <tools.version>1.5</tools.version>
+        <mysql.version>5.1.17</mysql.version>
         <migration.env>test</migration.env>
     </properties>
 
@@ -36,6 +36,20 @@
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
             <version>${jasper.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>bouncycastle</groupId>
+                    <artifactId>bcmail-jdk14</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>bouncycastle</groupId>
+                    <artifactId>bcprov-jdk14</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.bouncycastle</groupId>
+                    <artifactId>bctsp-jdk14</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
@@ -52,16 +66,22 @@
             <artifactId>jxl</artifactId>
             <version>${jxl.version}</version>
         </dependency>
+        <!-- 
         <dependency>
             <groupId>jaxen</groupId>
             <artifactId>jaxen</artifactId>
             <version>1.1.1</version>
         </dependency>
+         -->
+         <!-- 
         <dependency>
-            <groupId>hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <version>1.8.0.7</version>
+            <groupId>com.lowagie</groupId>
+            <artifactId>itextasian</artifactId>
+            <version>1.0.0</version>
         </dependency>
+         -->
+        
+        <!-- log4j -->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -80,6 +100,12 @@
         </dependency>
         
         <!-- test -->
+        <dependency>
+            <groupId>hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>1.8.0.7</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
