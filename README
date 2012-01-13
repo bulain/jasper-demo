@@ -1,4 +1,11 @@
-This is JasperReports demo project.
+This is JasperReports demo project, and will demo the next part.
+1, demo JDBC.
+2, demo java bean.
+3, demo group list.
+4, demo i18n.
+5, demo Asia language. 
+6, demo iText.
+7, demo fill iText using PDF template. 
 
 If you want to build this project, please follow the next step.
 1, checkout out parent and run: mvn install.
