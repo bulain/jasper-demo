@@ -1,12 +1,18 @@
 This is JasperReports demo project, and will demo the next part.
-1, demo JDBC.
-2, demo java bean.
-3, demo group list.
-4, demo i18n.
-5, demo Asia language. 
-6, demo iText.
-7, demo fill iText using PDF template. 
+1, demo JDBC. done
+2, demo java bean. done
+3, demo group list. done
+4, demo i18n. done
+5, demo Asia language. done
+6, demo read from PDF form using iText. done
+7, demo write into PDF form using iText. done
+8, demo separate PDF using iText.
+9, demo merge PDF using iText.
 
 If you want to build this project, please follow the next step.
-1, checkout out parent and run: mvn install.
-2, mvn clean package
+1, checkout out parent and run: 
+    git clone git@github.com:bulain/parent.git
+    mvn install
+2, checkout out jasper-demo:
+    git clone git@github.com:bulain/jasper-demo.git
+    mvn clean package
