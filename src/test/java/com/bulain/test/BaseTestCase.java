@@ -9,8 +9,7 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @TestExecutionListeners(value = {DependencyInjectionTestExecutionListener.class})
-@ContextConfiguration(locations = {"classpath*:spring/applicationContext*.xml",
-        "classpath*:spring/propertyConfigurer-test.xml"})
+@ContextConfiguration(locations = {"classpath*:spring/applicationContext*.xml"})
 @Ignore
 public abstract class BaseTestCase {
 
