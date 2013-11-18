@@ -143,7 +143,7 @@
             </plugin>
             <plugin>
                 <groupId>org.mybatis.maven</groupId>
-                <artifactId>maven-migration-plugin</artifactId>
+                <artifactId>migrations-maven-plugin</artifactId>
                 <configuration>
                     <repository>src/migration</repository>
                 </configuration>
