@@ -16,7 +16,6 @@ import net.sf.jasperreports.engine.JRResultSetDataSource;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.fill.JRFiller;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +36,7 @@ public class XlsReportTest extends BaseTestCase {
 
         JRDataSource jrDataSource = createJRResultSetDataSource();
 
-        JasperPrint jasperPrint = JRFiller.fillReport(jasperReport, new HashMap<String, Object>(), jrDataSource);
+        JasperPrint jasperPrint = JasperUtils.fillReport(jasperReport, new HashMap<String, Object>(), jrDataSource);
         JasperUtils.exportReportToXlsFile(jasperPrint, "target/xlsReport.xls");
         JasperUtils.exportReportToXlsxFile(jasperPrint, "target/xlsReport.xlsx");
     }

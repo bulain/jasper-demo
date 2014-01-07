@@ -19,7 +19,6 @@ import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.fill.JRFiller;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,14 +36,14 @@ public class JavaBeanReportTest extends BaseTestCase {
 
     @Test
     public void testReport4JRResultSetDataSource() throws IOException, JRException, SQLException {
-        ClassPathResource resource = new ClassPathResource("reports/javaBeanReport.jr.xml");
+        ClassPathResource resource = new ClassPathResource("reports/javaBeanReport.jrxml");
         InputStream inputStream = resource.getInputStream();
 
         JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
 
         JRDataSource jrDataSource = createJRResultSetDataSource();
 
-        JasperPrint jasperPrint = JRFiller.fillReport(jasperReport, new HashMap<String, Object>(), jrDataSource);
+        JasperPrint jasperPrint = JasperUtils.fillReport(jasperReport, new HashMap<String, Object>(), jrDataSource);
         JasperExportManager.exportReportToPdfFile(jasperPrint, "target/javaBeanReport-resultSet.pdf");
         JasperExportManager.exportReportToXmlFile(jasperPrint, "target/javaBeanReport-resultSet.xml", false);
         JasperExportManager.exportReportToHtmlFile(jasperPrint, "target/javaBeanReport-resultSet.html");
@@ -65,14 +64,14 @@ public class JavaBeanReportTest extends BaseTestCase {
 
     @Test
     public void testReport4JRBeanCollectionDataSource() throws IOException, JRException, SQLException {
-        ClassPathResource resource = new ClassPathResource("reports/javaBeanReport.jr.xml");
+        ClassPathResource resource = new ClassPathResource("reports/javaBeanReport.jrxml");
         InputStream inputStream = resource.getInputStream();
 
         JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
 
         JRDataSource jrDataSource = createJRBeanCollectionDataSource();
 
-        JasperPrint jasperPrint = JRFiller.fillReport(jasperReport, new HashMap<String, Object>(), jrDataSource);
+        JasperPrint jasperPrint = JasperUtils.fillReport(jasperReport, new HashMap<String, Object>(), jrDataSource);
         JasperExportManager.exportReportToPdfFile(jasperPrint, "target/javaBeanReport-beanCollection.pdf");
         JasperExportManager.exportReportToXmlFile(jasperPrint, "target/javaBeanReport-beanCollection.xml", false);
         JasperExportManager.exportReportToHtmlFile(jasperPrint, "target/javaBeanReport-beanCollection.html");

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="groupByReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" resourceBundle="messages">
+    <property name="ireport.zoom" value="1.0" />
+    <property name="ireport.x" value="0" />
+    <property name="ireport.y" value="0" />
+    <style name="table" fontName="仿宋">
+        <box>
+            <pen lineWidth="1.0" lineColor="#000000" />
+        </box>
+    </style>
+    <style name="table_TH" mode="Opaque" backcolor="#F0F8FF" fontName="仿宋">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000" />
+        </box>
+    </style>
+    <style name="table_CH" mode="Opaque" backcolor="#BFE1FF" fontName="仿宋">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000" />
+        </box>
+    </style>
+    <style name="table_TD" mode="Opaque" backcolor="#FFFFFF" fontName="仿宋">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000" />
+        </box>
+    </style>
+    <queryString>
+		<![CDATA[select name, code, lang, text, category
+from referances
+order by name, code, lang]]>
+    </queryString>
+    <field name="name" class="java.lang.String">
+        <fieldDescription><![CDATA[name]]></fieldDescription>
+    </field>
+    <field name="lang" class="java.lang.String">
+        <fieldDescription><![CDATA[lang]]></fieldDescription>
+    </field>
+    <field name="code" class="java.lang.String">
+        <fieldDescription><![CDATA[code]]></fieldDescription>
+    </field>
+    <field name="text" class="java.lang.String">
+        <fieldDescription><![CDATA[text]]></fieldDescription>
+    </field>
+    <field name="category" class="java.lang.String">
+        <fieldDescription><![CDATA[category]]></fieldDescription>
+    </field>
+    <group name="name">
+        <groupExpression><![CDATA[$F{name}]]></groupExpression>
+        <groupHeader>
+            <band height="83">
+                <textField>
+                    <reportElement style="table_TH" x="1" y="20" width="131" height="20" />
+                    <textElement />
+                    <textFieldExpression class="java.lang.String"><![CDATA[$R{referance.name}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement style="table_TD" x="132" y="20" width="100" height="20" />
+                    <textElement />
+                    <textFieldExpression class="java.lang.String"><![CDATA[$F{name}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement style="table_TH" x="0" y="63" width="131" height="20" />
+                    <textElement />
+                    <textFieldExpression class="java.lang.String"><![CDATA[$R{referance.code}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement style="table_TH" x="131" y="63" width="119" height="20" />
+                    <textElement />
+                    <textFieldExpression class="java.lang.String"><![CDATA[$R{referance.lang}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement style="table_TH" x="250" y="63" width="168" height="20" />
+                    <textElement />
+                    <textFieldExpression class="java.lang.String"><![CDATA[$R{referance.text}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement style="table_TH" x="418" y="63" width="137" height="20" />
+                    <textElement />
+                    <textFieldExpression class="java.lang.String"><![CDATA[$R{referance.category}]]></textFieldExpression>
+                </textField>
+            </band>
+        </groupHeader>
+        <groupFooter>
+            <band />
+        </groupFooter>
+    </group>
+    <background>
+        <band splitType="Stretch" />
+    </background>
+    <title>
+        <band height="61" splitType="Stretch">
+            <staticText>
+                <reportElement x="203" y="18" width="167" height="20" />
+                <textElement textAlignment="Center" />
+                <text><![CDATA[Group By Report]]></text>
+            </staticText>
+        </band>
+    </title>
+    <pageHeader>
+        <band splitType="Stretch" />
+    </pageHeader>
+    <columnHeader>
+        <band splitType="Stretch" />
+    </columnHeader>
+    <detail>
+        <band height="20" splitType="Stretch">
+            <textField>
+                <reportElement style="table_TD" x="1" y="0" width="130" height="20" />
+                <textElement />
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{code}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement style="table_TD" x="131" y="0" width="119" height="20" />
+                <textElement />
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{lang}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement style="table_TD" x="250" y="0" width="168" height="20" />
+                <textElement />
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{text}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement style="table_TD" x="418" y="0" width="137" height="20" />
+                <textElement />
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{category}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band splitType="Stretch" />
+    </columnFooter>
+    <pageFooter>
+        <band height="63" splitType="Stretch">
+            <textField>
+                <reportElement x="203" y="22" width="167" height="20" />
+                <textElement textAlignment="Center" />
+                <textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+    <summary>
+        <band height="1" splitType="Stretch" />
+    </summary>
+</jasperReport>

@@ -13,7 +13,6 @@ import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.fill.JRFiller;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,13 +26,13 @@ public class JdbcReportTest extends BaseTestCase {
 
     @Test
     public void testReport() throws IOException, JRException, SQLException {
-        ClassPathResource resource = new ClassPathResource("reports/jdbcReport.jr.xml");
+        ClassPathResource resource = new ClassPathResource("reports/jdbcReport.jrxml");
         InputStream inputStream = resource.getInputStream();
 
         JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
         
         Connection conn = dataSource.getConnection();
-        JasperPrint jasperPrint = JRFiller.fillReport(jasperReport, new HashMap<String,Object>(), conn);
+        JasperPrint jasperPrint = JasperUtils.fillReport(jasperReport, new HashMap<String,Object>(), conn);
         JasperExportManager.exportReportToPdfFile(jasperPrint, "target/jdbcReport.pdf");
         JasperExportManager.exportReportToXmlFile(jasperPrint, "target/jdbcReport.xml", false);
         JasperExportManager.exportReportToHtmlFile(jasperPrint, "target/jdbcReport.html");

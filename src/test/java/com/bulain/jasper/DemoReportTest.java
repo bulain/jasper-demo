@@ -18,7 +18,7 @@ import org.springframework.core.io.ClassPathResource;
 public class DemoReportTest {
     @Test
     public void testJasperReports() throws IOException, JRException {
-        ClassPathResource resource = new ClassPathResource("reports/demoReport.jr.xml");
+        ClassPathResource resource = new ClassPathResource("reports/demoReport.jrxml");
         InputStream inputStream = resource.getInputStream();
 
         JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);

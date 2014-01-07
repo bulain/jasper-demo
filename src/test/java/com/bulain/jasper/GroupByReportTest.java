@@ -16,7 +16,6 @@ import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.fill.JRFiller;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ public class GroupByReportTest extends BaseTestCase {
 
     @Test
     public void testReport() throws IOException, JRException, SQLException {
-        ClassPathResource resource = new ClassPathResource("reports/groupByReport.jr.xml");
+        ClassPathResource resource = new ClassPathResource("reports/groupByReport.jrxml");
         InputStream inputStream = resource.getInputStream();
 
         JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
@@ -40,7 +39,7 @@ public class GroupByReportTest extends BaseTestCase {
         Locale locale = Locale.getDefault();
         parameters.put(JRParameter.REPORT_LOCALE, locale);
 
-        JasperPrint jasperPrint = JRFiller.fillReport(jasperReport, parameters, conn);
+        JasperPrint jasperPrint = JasperUtils.fillReport(jasperReport, parameters, conn);
         JasperExportManager.exportReportToPdfFile(jasperPrint, "target/groupByReport.pdf");
         JasperExportManager.exportReportToXmlFile(jasperPrint, "target/groupByReport.xml", false);
         JasperExportManager.exportReportToHtmlFile(jasperPrint, "target/groupByReport.html");
