@@ -21,11 +21,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jasper.version>4.0.2</jasper.version>
+        <jasper.version>5.5.0</jasper.version>
         <jasper-fonts.version>4.0.0</jasper-fonts.version>
         <poi.version>3.9</poi.version>
         <jxl.version>2.6.12</jxl.version>
-        <itext.version>2.1.7</itext.version>
+        <itext.version>4.2.1</itext.version>
         <tools.version>1.5</tools.version>
         <mysql.version>5.1.17</mysql.version>
         <migration.env>test</migration.env>
@@ -44,11 +44,13 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- 
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports-fonts</artifactId>
             <version>${jasper-fonts.version}</version>
         </dependency>
+         -->
 
         <!-- poi -->
         <dependency>
@@ -88,11 +90,13 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- 
         <dependency>
             <groupId>com.lowagie</groupId>
             <artifactId>iTextAsian</artifactId>
             <version>${itext.version}</version>
         </dependency>
+         -->
 
         <!-- log4j -->
         <dependency>

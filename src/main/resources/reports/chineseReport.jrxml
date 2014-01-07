@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="jdbcReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="jdbcReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d940faf4-a5ba-4862-ad8f-092d3afd9c50">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -40,7 +40,7 @@ order by name, code, lang]]>
 	<title>
 		<band height="55" splitType="Stretch">
 			<staticText>
-				<reportElement x="150" y="16" width="244" height="20"/>
+				<reportElement x="150" y="16" width="244" height="20" uuid="7e086f76-c313-4616-903a-685cfd49be06"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[JDBC Demo]]></text>
 			</staticText>
@@ -49,28 +49,23 @@ order by name, code, lang]]>
 	<pageHeader>
 		<band height="20" splitType="Stretch">
 			<staticText>
-				<reportElement style="table_TH" x="0" y="0" width="100" height="20"/>
-				<textElement/>
+				<reportElement style="table_TH" x="0" y="0" width="100" height="20" uuid="e041c5a0-db3a-4c0a-9f6f-4ad91908c87e"/>
 				<text><![CDATA[Name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="table_TH" x="100" y="0" width="100" height="20"/>
-				<textElement/>
+				<reportElement style="table_TH" x="100" y="0" width="100" height="20" uuid="41eb1da3-bc8f-4ecc-b31e-b1ece5f58338"/>
 				<text><![CDATA[Code]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="table_TH" x="200" y="0" width="100" height="20"/>
-				<textElement/>
+				<reportElement style="table_TH" x="200" y="0" width="100" height="20" uuid="a4fba4b2-e48e-4efc-b1d7-bc087a6e913c"/>
 				<text><![CDATA[Language]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="table_TH" x="300" y="0" width="155" height="20"/>
-				<textElement/>
+				<reportElement style="table_TH" x="300" y="0" width="155" height="20" uuid="8c224309-10a4-4f32-a317-ef552c7dfc3b"/>
 				<text><![CDATA[Text]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="table_TH" x="455" y="0" width="100" height="20"/>
-				<textElement/>
+				<reportElement style="table_TH" x="455" y="0" width="100" height="20" uuid="8dc38c29-ce1b-4a98-86dd-c2d55a562cb3"/>
 				<text><![CDATA[Category]]></text>
 			</staticText>
 		</band>
@@ -81,31 +76,27 @@ order by name, code, lang]]>
 	<detail>
 		<band height="20" splitType="Stretch">
 			<textField>
-				<reportElement style="table_TD" x="0" y="0" width="100" height="20"/>
-				<textElement/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{name}]]></textFieldExpression>
+				<reportElement style="table_TD" x="0" y="0" width="100" height="20" uuid="a0c92c72-659b-4fd8-9657-81f9990e8fd5"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="table_TD" x="100" y="0" width="100" height="20"/>
-				<textElement/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{code}]]></textFieldExpression>
+				<reportElement style="table_TD" x="100" y="0" width="100" height="20" uuid="17a44376-aa28-4c6b-a8f6-1fe09f7d7e94"/>
+				<textFieldExpression><![CDATA[$F{code}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="table_TD" x="200" y="0" width="100" height="20"/>
-				<textElement/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{lang}]]></textFieldExpression>
+				<reportElement style="table_TD" x="200" y="0" width="100" height="20" uuid="cb20aa19-1fd7-4daf-b977-b22d790279d3"/>
+				<textFieldExpression><![CDATA[$F{lang}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
-				<reportElement style="table_TD" x="300" y="0" width="155" height="20"/>
+				<reportElement style="table_TD" x="300" y="0" width="155" height="20" uuid="a24c11f7-259d-49ea-b2e0-e35f0f91a9d6"/>
 				<textElement>
-					<font fontName="SansSerif" pdfFontName="STSong-Light"/>
+					<font fontName="simfang"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{text}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{text}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="table_TD" x="455" y="0" width="100" height="20"/>
-				<textElement/>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{category}]]></textFieldExpression>
+				<reportElement style="table_TD" x="455" y="0" width="100" height="20" uuid="2ae7bd41-387c-4adc-a8bd-44fa5c0c0b92"/>
+				<textFieldExpression><![CDATA[$F{category}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -115,9 +106,9 @@ order by name, code, lang]]>
 	<pageFooter>
 		<band height="62" splitType="Stretch">
 			<textField>
-				<reportElement x="150" y="26" width="244" height="20"/>
+				<reportElement x="150" y="26" width="244" height="20" uuid="088969dc-2ccd-4990-b724-d43f9628aeab"/>
 				<textElement textAlignment="Center"/>
-				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageFooter>
