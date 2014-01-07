@@ -44,5 +44,7 @@ public class I18nReportTest extends BaseTestCase {
         JasperExportManager.exportReportToPdfFile(jasperPrint, "target/i18nReport.pdf");
         JasperExportManager.exportReportToXmlFile(jasperPrint, "target/i18nReport.xml", false);
         JasperExportManager.exportReportToHtmlFile(jasperPrint, "target/i18nReport.html");
+        JasperUtils.exportReportToXlsFile(jasperPrint, "target/i18nReport.xls");
+        JasperUtils.exportReportToXlsxFile(jasperPrint, "target/i18nReport.xlsx");
     }
 }

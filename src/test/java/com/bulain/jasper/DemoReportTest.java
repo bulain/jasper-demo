@@ -22,9 +22,11 @@ public class DemoReportTest {
         InputStream inputStream = resource.getInputStream();
 
         JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
-        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, new HashMap<String, Object>(), new JREmptyDataSource());
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, new HashMap<String, Object>(),
+                new JREmptyDataSource());
         JasperExportManager.exportReportToPdfFile(jasperPrint, "target/demoReport.pdf");
         JasperExportManager.exportReportToXmlFile(jasperPrint, "target/demoReport.xml", false);
         JasperExportManager.exportReportToHtmlFile(jasperPrint, "target/demoReport.html");
+        
     }
 }

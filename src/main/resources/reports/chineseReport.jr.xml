@@ -4,25 +4,25 @@
     <property name="ireport.zoom" value="1.0" />
     <property name="ireport.x" value="0" />
     <property name="ireport.y" value="0" />
-    <reportFont name="Song" isDefault="true" size="14" 
+    <reportFont name="宋体" isDefault="true" size="14" 
         isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" 
         pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="false" />
-    <style name="table" fontName="Song">
+    <style name="table" fontName="宋体">
         <box>
             <pen lineWidth="1.0" lineColor="#000000" />
         </box>
     </style>
-    <style name="table_TH" mode="Opaque" backcolor="#F0F8FF" fontName="Song">
+    <style name="table_TH" mode="Opaque" backcolor="#F0F8FF" fontName="宋体">
         <box>
             <pen lineWidth="0.5" lineColor="#000000" />
         </box>
     </style>
-    <style name="table_CH" mode="Opaque" backcolor="#BFE1FF" fontName="Song">
+    <style name="table_CH" mode="Opaque" backcolor="#BFE1FF" fontName="宋体">
         <box>
             <pen lineWidth="0.5" lineColor="#000000" />
         </box>
     </style>
-    <style name="table_TD" mode="Opaque" backcolor="#FFFFFF" fontName="Song">
+    <style name="table_TD" mode="Opaque" backcolor="#FFFFFF" fontName="宋体">
         <box>
             <pen lineWidth="0.5" lineColor="#000000" />
         </box>
@@ -102,7 +102,9 @@ order by name, code, lang]]>
             </textField>
             <textField>
                 <reportElement style="table_TD" x="300" y="0" width="155" height="20" />
-                <textElement />
+               <textElement >
+                    <font fontName="SansSerif" pdfFontName="STSong-Light"/>
+                </textElement>
                 <textFieldExpression class="java.lang.String"><![CDATA[$F{text}]]></textFieldExpression>
             </textField>
             <textField>
