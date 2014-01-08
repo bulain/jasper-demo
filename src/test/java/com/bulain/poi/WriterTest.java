@@ -25,7 +25,7 @@ public class WriterTest extends BaseTestCase {
     private JdbcTemplate jdbcTemplate;
 
     @Test
-    public void testReadXls() throws Exception {
+    public void testWriteXls() throws Exception {
         Workbook workbook = new HSSFWorkbook();
         Sheet sheet = workbook.createSheet();
 
@@ -56,7 +56,7 @@ public class WriterTest extends BaseTestCase {
         workbook.write(os);
     }
     @Test
-    public void testReadXlsx() throws Exception {
+    public void testWriteXlsx() throws Exception {
         Workbook workbook = new XSSFWorkbook();
         Sheet sheet = workbook.createSheet();
 
