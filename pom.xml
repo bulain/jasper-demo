@@ -23,6 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jasper.version>5.5.0</jasper.version>
         <jasper-fonts.version>4.0.0</jasper-fonts.version>
+        <zxing.version>2.1</zxing.version>
         <poi.version>3.9</poi.version>
         <jxl.version>2.6.12</jxl.version>
         <itext.version>4.2.1</itext.version>
@@ -33,6 +34,12 @@
     </properties>
 
     <dependencies>
+        <!-- zxing -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>${zxing.version}</version>
+        </dependency>
         <!-- jasper reports -->
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
