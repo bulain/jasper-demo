@@ -24,6 +24,8 @@
         <jasper.version>5.5.0</jasper.version>
         <jasper-fonts.version>4.0.0</jasper-fonts.version>
         <zxing.version>2.1</zxing.version>
+        <barcode4j.version>2.1</barcode4j.version>
+        <batik.version>1.7</batik.version>
         <poi.version>3.9</poi.version>
         <jxl.version>2.6.12</jxl.version>
         <itext.version>4.2.1</itext.version>
@@ -39,6 +41,16 @@
             <groupId>com.google.zxing</groupId>
             <artifactId>javase</artifactId>
             <version>${zxing.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.barcode4j</groupId>
+            <artifactId>barcode4j</artifactId>
+            <version>${barcode4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>batik-bridge</artifactId>
+            <version>${batik.version}</version>
         </dependency>
         <!-- jasper reports -->
         <dependency>

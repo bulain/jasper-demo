@@ -26,7 +26,7 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
+		<band height="325" splitType="Stretch">
 			<image>
 				<reportElement x="235" y="32" width="100" height="50"/>
 				<imageExpression class="java.awt.Image"><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(new com.google.zxing.qrcode.QRCodeWriter().encode("1111",com.google.zxing.BarcodeFormat.QR_CODE,100,100))]]></imageExpression>
@@ -36,6 +36,18 @@
 				<textElement/>
 				<textFieldExpression class="java.lang.Long"><![CDATA[$F{cnt}]]></textFieldExpression>
 			</textField>
+            <componentElement>
+                <reportElement x="59" y="138" width="200" height="50" uuid="a141d7d4-bc15-4746-b10b-693e6808237f"/>
+                <jr:DataMatrix xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
+                    <jr:codeExpression><![CDATA["12345678"]]></jr:codeExpression>
+                </jr:DataMatrix>
+            </componentElement>
+            <componentElement>
+                <reportElement x="327" y="138" width="200" height="50" uuid="a50205c9-be63-4f6f-82e5-a48a544dedec"/>
+                <jr:PDF417 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
+                    <jr:codeExpression><![CDATA["12345678"]]></jr:codeExpression>
+                </jr:PDF417>
+            </componentElement>
 		</band>
 	</detail>
 	<columnFooter>
