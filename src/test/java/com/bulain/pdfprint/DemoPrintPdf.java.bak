@@ -1,0 +1,65 @@
+package com.bulain.pdfprint;
+
+import javax.print.PrintService;
+import javax.print.PrintServiceLookup;
+
+import org.junit.Test;
+
+import com.activetree.common.print.SilentPrint;
+import com.activetree.pdfprint.SilentPrintPdf;
+
+public class DemoPrintPdf {
+    @SuppressWarnings("static-access")
+    @Test
+    public void testPrint() {
+        String docList = "file:/C:/home/javaproject/jasper-demo/target/demoPortrait.pdf";
+
+        //Printer
+        SilentPrint silentPrint = new SilentPrintPdf();
+        //default media size
+        String paperSize = "(198, 113)";
+        silentPrint.setAttribute(SilentPrint.PAPER, paperSize);
+        //printer to print
+        PrintService defaultPrintService = PrintServiceLookup.lookupDefaultPrintService();
+        String printerName = defaultPrintService.getName();
+        silentPrint.setAttribute(SilentPrint.PRINTER_NAME, printerName);
+        //auto rotate and center
+        silentPrint.setAttribute(SilentPrint.AUTO_ROTATE_AND_CENTER, Boolean.TRUE);
+        //page scaling
+        silentPrint.setAttribute(SilentPrint.PAGE_SCALING, SilentPrint.FIT_TO_PRINTABLE_AREA);
+        //auto-match paper based on PDF page size.
+        silentPrint.setAttribute(SilentPrint.AUTO_MATCH_PAPER, Boolean.TRUE);
+        //collate
+        silentPrint.setAttribute(SilentPrint.COLLATE_COPIES, Boolean.TRUE);
+        //copies defaut 1; can make it to N copies
+        silentPrint.setAttribute(SilentPrint.COPIES, new Integer(1));
+        //print all docs as one print job
+        silentPrint.setAttribute(SilentPrint.SINGLE_PRINT_JOB, Boolean.FALSE);
+        //debug it
+        silentPrint.setAttribute(SilentPrint.DEBUG, Boolean.FALSE);
+        //job name
+        silentPrint.setAttribute(SilentPrint.JOB_NAME, "PDFSilentPrint");
+        //document
+        silentPrint.setAttribute(SilentPrint.DOC_LIST, docList);
+        //Add a docListener
+        //must have a default constructor for this class.
+        //silentPrint.setAttribute(SilentPrint.DOC_LISTENER, "demo.activetree.pdfprint.PdfDocListener");
+        //doc password protected if any
+        //silentPrint.setAttribute(SilentPrint.PASSWORD, docPassword);
+        //url protection if any
+        //silentPrint.setAttribute(SilentPrint.URL_AUTH_ID, urlAuthId);
+        //silentPrint.setAttribute(SilentPrint.URL_AUTH_PASSWORD, urlAuthPassword);
+        try {
+            silentPrint.start();
+        } catch (Throwable t) {
+            t.printStackTrace();
+        }
+        System.out.println("Printing launched, please wait...");
+
+        try {
+            Thread.currentThread().sleep(10000000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}

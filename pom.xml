@@ -21,12 +21,13 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jasper.version>5.5.0</jasper.version>
+        <jasper.version>4.0.2</jasper.version>
         <jasper-fonts.version>4.0.0</jasper-fonts.version>
         <zxing.version>2.1</zxing.version>
         <barcode4j.version>2.1</barcode4j.version>
         <batik.version>1.7</batik.version>
         <poi.version>3.9</poi.version>
+        <pdfbox.version>1.8.5</pdfbox.version>
         <jxl.version>2.6.12</jxl.version>
         <itext.version>4.2.1</itext.version>
         <hsqldb.version>1.8.0.7</hsqldb.version>
@@ -36,6 +37,14 @@
     </properties>
 
     <dependencies>
+        <!-- pdfbox  -->
+        <!-- 
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>${pdfbox.version}</version>
+        </dependency>
+         -->
         <!-- zxing -->
         <dependency>
             <groupId>com.google.zxing</groupId>

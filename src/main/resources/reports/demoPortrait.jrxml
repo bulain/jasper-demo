@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="demoPortrait" pageWidth="198" pageHeight="113" orientation="Landscape" columnWidth="198" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+    <property name="ireport.zoom" value="1.6105100000000008" />
+    <property name="ireport.x" value="0" />
+    <property name="ireport.y" value="0" />
+    <property name="ireport.scriptlethandling" value="0" />
+    <property name="ireport.encoding" value="UTF-8" />
+    <import value="net.sf.jasperreports.engine.*" />
+    <import value="java.util.*" />
+    <import value="net.sf.jasperreports.engine.data.*" />
+    <queryString>
+		<![CDATA[select "1" COLUMNNAME1, "2" COLUMNNAME2, "3" COLUMNNAME3, "4" COLUMNNAME4, "5" COLUMNNAME5, "6" COLUMNNAME6, "7" COLUMNNAME7, "8" COLUMNNAME8, "9" COLUMNNAME9, "10" COLUMNNAME10 from referances limit 5]]>
+    </queryString>
+    <field name="COLUMNNAME1" class="java.lang.String" />
+    <field name="COLUMNNAME2" class="java.lang.String" />
+    <field name="COLUMNNAME3" class="java.lang.String" />
+    <field name="COLUMNNAME4" class="java.lang.String" />
+    <field name="COLUMNNAME5" class="java.lang.String" />
+    <field name="COLUMNNAME6" class="java.lang.String" />
+    <field name="COLUMNNAME7" class="java.lang.String" />
+    <field name="COLUMNNAME8" class="java.lang.String" />
+    <field name="COLUMNNAME9" class="java.lang.String" />
+    <field name="COLUMNNAME10" class="java.lang.String" />
+    <background>
+        <band splitType="Stretch" />
+    </background>
+    <title>
+        <band splitType="Stretch" />
+    </title>
+    <pageHeader>
+        <band splitType="Stretch" />
+    </pageHeader>
+    <columnHeader>
+        <band splitType="Stretch" />
+    </columnHeader>
+    <detail>
+        <band height="100" splitType="Stretch">
+            <ellipse>
+                <reportElement key="ellipse-2" x="161" y="72" width="22" height="11" />
+            </ellipse>
+            <ellipse>
+                <reportElement key="ellipse-1" x="160" y="58" width="22" height="11" />
+            </ellipse>
+            <staticText>
+                <reportElement key="staticText-7" x="162" y="59" width="20" height="10" />
+                <textElement>
+                    <font size="6" isBold="true" />
+                </textElement>
+                <text><![CDATA[ROHS]]></text>
+            </staticText>
+            <staticText>
+                <reportElement key="staticText-8" x="166" y="73" width="20" height="10" />
+                <textElement>
+                    <font size="6" isBold="true" />
+                </textElement>
+                <text><![CDATA[P  b]]></text>
+            </staticText>
+            <line>
+                <reportElement key="line-1" x="164" y="74" width="17" height="8" />
+            </line>
+            <staticText>
+                <reportElement key="staticText-9" x="158" y="85" width="32" height="10" />
+                <textElement>
+                    <font fontName="仿宋" size="6" isBold="true" />
+                </textElement>
+                <text><![CDATA[薄膜电容]]></text>
+            </staticText>
+            <textField isBlankWhenNull="false">
+                <reportElement key="textField-1" x="7" y="3" width="176" height="10" />
+                <textElement>
+                    <font fontName="仿宋" size="7" />
+                </textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA["中文:" + $F{COLUMNNAME1}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement key="textField-3" x="7" y="43" width="176" height="10" />
+                <textElement>
+                    <font size="7" />
+                </textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA["COLUMNNAME3: " + $F{COLUMNNAME3}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement key="textField-4" x="7" y="63" width="137" height="10" />
+                <textElement>
+                    <font size="7" />
+                </textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA["COLUMNNAME4:" + $F{COLUMNNAME4}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement key="textField-5" x="7" y="83" width="137" height="10" />
+                <textElement>
+                    <font size="7" />
+                </textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA["COLUMNNAME5:" + $F{COLUMNNAME5}]]></textFieldExpression>
+            </textField>
+            <textField isBlankWhenNull="false">
+                <reportElement key="textField-7" x="7" y="23" width="176" height="10" />
+                <textElement>
+                    <font size="7" />
+                </textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA["COLUMNNAME2:" + $F{COLUMNNAME2}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band splitType="Stretch" />
+    </columnFooter>
+    <pageFooter>
+        <band splitType="Stretch" />
+    </pageFooter>
+    <summary>
+        <band splitType="Stretch" />
+    </summary>
+</jasperReport>
