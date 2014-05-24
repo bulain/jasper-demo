@@ -61,14 +61,14 @@
 			<staticText>
 				<reportElement key="staticText-9" x="158" y="85" width="32" height="10"/>
 				<textElement>
-					<font fontName="SansSerif" size="6" isBold="true"/>
+					<font fontName="宋体" size="6" isBold="true"/>
 				</textElement>
 				<text><![CDATA[薄膜电容]]></text>
 			</staticText>
 			<textField isBlankWhenNull="false">
 				<reportElement key="textField-1" x="7" y="3" width="176" height="10"/>
 				<textElement>
-					<font fontName="SansSerif" size="7"/>
+					<font fontName="宋体" size="7"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA["中文:" + $F{COLUMNNAME1}]]></textFieldExpression>
 			</textField>
