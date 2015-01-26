@@ -9,7 +9,7 @@
             <pen lineWidth="1.0" lineColor="#000000" />
         </box>
     </style>
-    <style name="" mode="Opaque" backcolor="#F0F8FF" fontName="仿宋">
+    <style name="table_TH" mode="Opaque" backcolor="#F0F8FF" fontName="仿宋">
         <box>
             <pen lineWidth="0.5" lineColor="#000000" />
         </box>
@@ -51,27 +51,27 @@ order by name, code, lang]]>
     <pageHeader>
         <band height="20" splitType="Stretch">
             <textField>
-                <reportElement style="" x="0" y="0" width="100" height="20" />
+                <reportElement style="table_TH" x="0" y="0" width="100" height="20" />
                 <textElement />
                 <textFieldExpression class="java.lang.String"><![CDATA[$R{referance.name}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement style="" x="100" y="0" width="100" height="20" />
+                <reportElement style="table_TH" x="100" y="0" width="100" height="20" />
                 <textElement />
                 <textFieldExpression class="java.lang.String"><![CDATA[$R{referance.code}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement style="" x="200" y="0" width="100" height="20" />
+                <reportElement style="table_TH" x="200" y="0" width="100" height="20" />
                 <textElement />
                 <textFieldExpression class="java.lang.String"><![CDATA[$R{referance.lang}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement style="" x="300" y="0" width="155" height="20" />
+                <reportElement style="table_TH" x="300" y="0" width="155" height="20" />
                 <textElement />
                 <textFieldExpression class="java.lang.String"><![CDATA[$R{referance.text}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement style="" x="455" y="0" width="100" height="20" />
+                <reportElement style="table_TH" x="455" y="0" width="100" height="20" />
                 <textElement />
                 <textFieldExpression class="java.lang.String"><![CDATA[$R{referance.category}]]></textFieldExpression>
             </textField>
