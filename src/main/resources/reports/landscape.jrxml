@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="landscape" pageWidth="150" pageHeight="100" orientation="Landscape" columnWidth="150" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.853116706110003"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="zh" fontName="仿宋"/>
+	<queryString>
+		<![CDATA[select 1 from changelog]]>
+	</queryString>
+	<field name="1" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement style="zh" x="3" y="2" width="145" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[这个也是测试报表，测试报表1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="zh" x="3" y="24" width="145" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[这个也是测试报表，测试报表2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="zh" x="3" y="46" width="145" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[这个也是测试报表，测试报表3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="zh" x="3" y="69" width="145" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[这个也是测试报表，测试报表4]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

@@ -29,7 +29,10 @@
         <poi.version>3.9</poi.version>
         <pdfbox.version>1.8.5</pdfbox.version>
         <jxl.version>2.6.12</jxl.version>
+        <!-- 
         <itext.version>4.2.1</itext.version>
+         -->
+        <itext.version>2.1.7</itext.version>
         <hsqldb.version>1.8.0.7</hsqldb.version>
         <tools.version>1.5</tools.version>
         <mysql.version>5.1.17</mysql.version>
