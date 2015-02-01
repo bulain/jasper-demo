@@ -76,7 +76,8 @@ public class JasperUtils {
     public static void exportReportToFixPrint(JasperPrint jasperPrint, String printServiceName) throws JRException {
         exportReportToFixPrint(jasperPrint, printServiceName, OrientationEnum.PORTRAIT);
     }
-    public static void exportReportToFixPrint(JasperPrint jasperPrint, String printServiceName, OrientationEnum orientation) throws JRException {
+    public static void exportReportToFixPrint(JasperPrint jasperPrint, String printServiceName,
+            OrientationEnum orientation) throws JRException {
         HashPrintServiceAttributeSet printServiceAttributeSet = new HashPrintServiceAttributeSet();
         PrintService[] services = PrintServiceLookup.lookupPrintServices(null, printServiceAttributeSet);
         if (services.length <= 0) {
@@ -96,7 +97,9 @@ public class JasperUtils {
         }
 
         PrintRequestAttributeSet printRequestAttributeSet = new HashPrintRequestAttributeSet();
-        jasperPrint.setOrientation(orientation);
+        if (orientation != null) {
+            jasperPrint.setOrientation(orientation);
+        }
 
         PrintServiceExporter exporter = new PrintServiceExporter();
         exporter.setParameter(JRPrintServiceExporterParameter.PRINT_REQUEST_ATTRIBUTE_SET, printRequestAttributeSet);
@@ -119,7 +122,9 @@ public class JasperUtils {
 
         PrintRequestAttributeSet printRequestAttributeSet = new HashPrintRequestAttributeSet();
         PrintServiceAttributeSet printServiceAttributeSet = new HashPrintServiceAttributeSet();
-        jasperPrint.setOrientation(orientation);
+        if (orientation != null) {
+            jasperPrint.setOrientation(orientation);
+        }
 
         PrintServiceExporter exporter = new PrintServiceExporter();
         exporter.setParameter(JRPrintServiceExporterParameter.PRINT_REQUEST_ATTRIBUTE_SET, printRequestAttributeSet);
